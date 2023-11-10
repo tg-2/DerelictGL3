@@ -284,7 +284,7 @@ q{
     // the VertexAttribP stuff is. Need to figure out how to
     // load these separately as an extension in the new architecture...
     import derelict.util.system;
-    static if(!Derelict_OS_Mac) {
+    /+static if(!Derelict_OS_Mac) {
         bindGLFunc(cast(void**)&glVertexP2ui, "glVertexP2ui");
         bindGLFunc(cast(void**)&glVertexP2uiv, "glVertexP2uiv");
         bindGLFunc(cast(void**)&glVertexP3ui, "glVertexP3ui");
@@ -315,7 +315,7 @@ q{
         bindGLFunc(cast(void**)&glColorP4uiv, "glColorP4uiv");
         bindGLFunc(cast(void**)&glSecondaryColorP3ui, "glSecondaryColorP3ui");
         bindGLFunc(cast(void**)&glSecondaryColorP3uiv, "glSecondaryColorP3uiv");
-    }
+    }+/
     bindGLFunc(cast(void**)&glVertexAttribP1ui, "glVertexAttribP1ui");
     bindGLFunc(cast(void**)&glVertexAttribP1uiv, "glVertexAttribP1uiv");
     bindGLFunc(cast(void**)&glVertexAttribP2ui, "glVertexAttribP2ui");

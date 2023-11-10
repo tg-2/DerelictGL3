@@ -174,15 +174,19 @@ struct GLLoader
 
     void bindGLFunc(void** ptr, string symName)
     {
-        static if(Derelict_OS_Mac) {
+        //static if(Derelict_OS_Mac) {
+        if(!getProcAddress){
             return DerelictGL3.bindFunc(ptr, symName);
         }
         else {
-            import derelict.util.exception : SymbolLoadException;
+	        //import derelict.util.exception : SymbolLoadException;
             
             auto sym = getProcAddress(symName.ptr);
-            if(!sym)
-                throw new SymbolLoadException("Failed to load OpenGL symbol [" ~ symName ~ "]");
+            if(!sym){
+	            import std.stdio: writefln;
+	            writefln("warning: failed to load gl function \"%s\"", symName);
+	            //throw new SymbolLoadException("Failed to load OpenGL symbol [" ~ symName ~ "]");
+            }
             *ptr = sym;
         }
     }
