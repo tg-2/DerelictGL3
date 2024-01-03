@@ -60,10 +60,10 @@ shared static this()
 }
 
 private:
-    static if(Derelict_OS_Android || Derelict_OS_iOS) {
+    /+static if(Derelict_OS_Android || Derelict_OS_iOS) {
         // Android and iOS do not support OpenGL3; use DerelictOpenGLES.
         static assert(false, "OpenGL is not supported on Android or iOS; use OpenGLES (DerelictGLES) instead");
-    } else static if(Derelict_OS_Windows) {
+    } else+/ static if(Derelict_OS_Windows) {
         private enum libNames = "opengl32.dll";
     } else static if(Derelict_OS_Mac) {
         private enum libNames = "../Frameworks/OpenGL.framework/OpenGL, /Library/Frameworks/OpenGL.framework/OpenGL, /System/Library/Frameworks/OpenGL.framework/OpenGL";
