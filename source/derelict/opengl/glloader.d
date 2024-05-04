@@ -135,7 +135,7 @@ struct GLLoader
         else return false;
     }
 
-    bool isExtensionSupported(string name)
+    bool isExtensionSupported(string name)@system
     {
         import core.stdc.string : strcmp, strstr;
 
@@ -207,7 +207,7 @@ private:
     GLVersion _contextVersion;
     GLVersion _loadedVersion;
 
-    GLVersion getContextVersion()
+    GLVersion getContextVersion()@system
     {
         /* glGetString(GL_VERSION) is guaranteed to return a constant string
          of the format "[major].[minor].[build] xxxx", where xxxx is vendor-specific
