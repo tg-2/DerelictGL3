@@ -100,8 +100,8 @@ struct GLLoader
         import derelict.util.exception : DerelictException;
 
         // Make sure a context is active, otherwise this could be meaningless.
-        if(!getCurrentContext())
-            throw new DerelictException("DerelictGL3.reload failure: An OpenGL context is not currently active.");
+        // if(!getCurrentContext())
+        //     throw new DerelictException("DerelictGL3.reload failure: An OpenGL context is not currently active.");
 
         _contextVersion = getContextVersion();
 
