@@ -3,3 +3,4 @@ bin
 update.txt
 .dub
 dub.selections.*
+*.redub_cache_json
